@@ -1,7 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
-
-
 name:  CI
 
 # Controls when the workflow will run
@@ -16,7 +13,7 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs: Buildandpushdocker.
+jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -25,16 +22,16 @@ jobs: Buildandpushdocker.
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: gitclone 
-    run: git clone https://github.com/Shubhambawa98/testenv.git
+      run: git clone https://github.com/Shubhambawa98/testenv.git.
     - name: docker installation
-    run: curl -fsSL https://get.docker.com | sh
+      run: curl -fsSL https://get.docker.com | sh
     - name: docker login
-    run: docker login -u ${{secrets.dockerhubusername}} -p $ {{sectets.dockerhubpassword}}
+      run: docker login -u ${{secrets.dockerhubusername}} -p $ {{sectets.dockerhubpassword}}
     - name: docker build
-    run: cd testenv && docker build. -t fast_api:satyam
+      run: cd testenv && docker build. -t fast_api:satyam
     - name: test
-    run: echo "hello"
-    -name: docker tag & push
-    run: docker tag fast_api:satyam shubhambawa98/testlkm:satyam && docker push shubhambawa98/testlkm:satyam
+      run: echo "hello"
+    - name: docker tag & push
+      run: docker tag fast_api:satyam shubhambawa98/testlkm:satyam && docker push shubhambawa98/testlkm:satyam
 
 
