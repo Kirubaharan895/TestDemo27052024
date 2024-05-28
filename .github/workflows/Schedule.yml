@@ -1,0 +1,19 @@
+name: Scheduled Workflow
+
+on:
+   schedule:
+    - cron: '07 12 * * *'
+
+jobs:
+  
+  build:
+   
+    runs-on: ubuntu-latest
+
+    
+    steps:
+
+      - name: print hello
+        run: echo "Hello, world!"
+
+  
